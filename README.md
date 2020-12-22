@@ -5,7 +5,7 @@ Fortran bindings to the [FLANN](https://github.com/mariusmuja/flann
 ) library for performing fast approximate nearest neighbor searches in high dimensional spaces. 
 
 > :warning:
-> WARNING: Development of the Fortran FLANN bindings is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested. The instructions given below might not be complete.
+> WARNING: Development of the Fortran FLANN binding is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested. The instructions given below might not be complete.
 > :warning:
 
 ## Minimal usage example
@@ -70,10 +70,17 @@ where the `<PDF Viewer>` is a program like Atril, Okular, Evince, or others. Sin
 
 A more complete explanation of the algorithms available in FLANN can be found in the paper: 
 
-> Muja, M., & Lowe, D. G. (2009). Fast approximate nearest neighbors with automatic algorithm configuration. VISAPP (1), 2(331-340), 2.
+> Muja, M., & Lowe, D. G. (2009). Fast approximate nearest neighbors with automatic algorithm configuration. *Proceedings of the Fourth International Conference on Computer Vision Theory and Applications - Volume 1: VISAPP, (VISIGRAPP 2009)*, pages 331-340. DOI:[10.5220/0001787803310340](https://doi.org/10.5220/0001787803310340)
 
-PDF versions can be found easily with your favorite search engine. Some working links at the time of writing are: [(link 1)](https://lear.inrialpes.fr/~douze/enseignement/2014-2015/presentation_papers/muja_flann.pdf), [(link 2)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.1721&rep=rep1&type=pdf), [(link 3)]()
+PDF versions can be found easily with your favorite search engine. Some working links at the time of writing (2020/12/22) include: [(link 1)](https://lear.inrialpes.fr/~douze/enseignement/2014-2015/presentation_papers/muja_flann.pdf), [(link 2)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.1721&rep=rep1&type=pdf), [(link 3)](http://image.ntua.gr/iva/files/MujaLowe_ICCVTA2009%20-%20Fast%20Approximate%20Nearest%20Neighbors%20with%20Automatic%20Algorithm%20Configuration.pdf)
 
+## Contributing
+
+Feel welcome to submit bug reports or request changes to the Fortran bindings by opening a new [issue](https://github.com/ivan-pi/fortran-flann/issues).
+
+Since the Fortran bindings provided here are only a wrapper of the C interface exported in the original FLANN project, we are restricted to a subset of FLANN features. 
+
+If you think you are facing an issue with the underlying FLANN library, you might be able to find an answer in the [list of open/closed issues](https://github.com/mariusmuja/flann/issues). Unfortunately, the original project has gone stale and doesn't seem to be supported anymore.
 
 
 
