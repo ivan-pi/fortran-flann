@@ -1,0 +1,13 @@
+name = "fortran-flann"
+license = "BSD-2-Clause"
+author = "Ivan Pribec"
+maintaner = "ivan.pribec@gmail.com"
+copyright = "Copyright 2020 Ivan Pribec"
+description = "Fortran bindings to the FLANN library for approximate nearest neighbor searches"
+homepage = "https://github.com/ivan-pi/fortran-flann/"
+
+[library]
+source-dir = "src"
+
+[build]
+link = "flann"

@@ -1,14 +1,22 @@
 
+> :warning:
+> WARNING: Development of the Fortran FLANN binding is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested. The instructions given below might not be complete.
+> :warning:
+
 # Fortran FLANN binding
 
 Fortran bindings to the [FLANN](https://github.com/mariusmuja/flann
 ) library for performing fast approximate nearest neighbor searches in high dimensional spaces. 
 
-> :warning:
-> WARNING: Development of the Fortran FLANN binding is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested. The instructions given below might not be complete.
-> :warning:
+* [Minimal usage example](#minimal-usage-example)
+* [Installing FLANN](#installing-flann)
+* [Using FLANN with fpm](#using-flann-with-fpm)
+* [Learn more](#learn-more)
+* [Contributing](#contributing)
 
 ## Minimal usage example
+
+The example below shows how to use a `flann_index` instance to find the 5 nearest neighbors for 1000 random test points from a 128-dimensional data set containing 10000 points:
 
 ```fortran
 use flann
@@ -29,7 +37,7 @@ call random_number(dataset)
 call random_number(testset)
 
 ! Create a FLANN index instance
-idx = flann_index(dataset,kdtree_index_params(trees=8))
+idx = flann_index(dataset,kdtree_index_params(trees=8),'Euclidean')
 call idx%build_index()
 
 ! Perform K-nearest neighbor search
@@ -38,7 +46,7 @@ call idx%knn_search(testset,indexes,dists,nn,search_params(checks=128))
 end
 ```
 
-## Installing the FLANN library
+## Installing FLANN
 
 On Linux you can install FLANN using the command
 
@@ -48,12 +56,11 @@ sudo apt install libflann-doc libflann-dev libflann1.9
 
 Windows users can follow the instructions provided in documentation of the [original FLANN project](https://github.com/mariusmuja/flann).
 
-## Using FLANN in Fortran
+## Using FLANN with `fpm`
 
-We recommend trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the dependencies section of your TOML manifest file:
+To use FLANN in your project we recommed trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the `[dependencies]` section of your TOML manifest file:
 
 ```toml
-[dependencies]
 fortran-flann = { git = "https://github.com/ivan-pi/fortran-flann" }
 ```
 
@@ -75,10 +82,9 @@ PDF versions can be found easily with your favorite search engine. Some working 
 
 Feel welcome to submit bug reports or suggest changes to the Fortran bindings by opening a new [issue](https://github.com/ivan-pi/fortran-flann/issues).
 
-Since the Fortran bindings provided here are only a wrapper of the C interface exported in the original FLANN project, we are restricted to a subset of FLANN features.
-
 If you think you are facing an issue with the underlying FLANN library, you might be able to find an answer in the [list of open/closed issues](https://github.com/mariusmuja/flann/issues) of the original FLANN project. Unfortunately, the original project has gone stale and doesn't seem to be supported anymore.
 
+Since the Fortran bindings provided here are only a wrapper of the C interface exported in the original FLANN project, we are limited to a subset of the original FLANN functionality.
 
 
 
