@@ -5,7 +5,7 @@ Fortran bindings to the [FLANN](https://github.com/mariusmuja/flann
 ) library for performing fast approximate nearest neighbor searches in high dimensional spaces. 
 
 > :warning:
-> WARNING: Development of the Fortran FLANN bindings is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested.
+> WARNING: Development of the Fortran FLANN bindings is ongoing. This means the API is not yet stable and might be subject to changes. Several functions remain untested. The instructions given below might not be complete.
 > :warning:
 
 ## Minimal usage example
@@ -38,32 +38,44 @@ call idx%knn_search(testset,indexes,dists,nn,search_params(checks=128))
 end
 ```
 
+## Installing the FLANN library
 
-## Installing FLANN
-
-On Linux (Ubuntu) you can install FLANN using the command
+On Linux you can install FLANN using the command
 
 ```
 sudo apt install libflann-doc libflann-dev libflann1.9
 ```
 
-Assuming default install paths, you can use the command
-```
-<PDF Viewer> /usr/share/doc/flann/manual.pdf
-```
-where the `<PDF Viewer>` is a program like Atril, Okular, Evince, or others.
-
 Windows users can follow the instructions provided in documentation of the [original FLANN project](https://github.com/mariusmuja/flann).
 
 ## Using FLANN in Fortran
 
-We recommend trying the brand new Fortran package manager - [`fpm`](). To integrate FLANN in your project add the following lines to the appropriate sections of your manifest file:
+We recommend trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the appropriate sections of your TOML manifest file:
 
 ```toml
+[dependencies]
+fortran-flann = { git = "https://github.com/ivan-pi/fortran-flann" }
 
+[build]
+link = ["flann"]
 ```
 
-A basic Makefile is also provided in case you don't want to use `fpm`.
+## Learn more
+
+On Linux systems, assuming you installed the target `libflann-doc` under default path settings, you can view the original project documentation with the command:
+```
+<PDF Viewer> /usr/share/doc/flann/manual.pdf
+```
+where the `<PDF Viewer>` is a program like Atril, Okular, Evince, or others. Since this package only contains Fortran bindings, for the most part the API follows the original project in C++, with the important difference we decided to use "snake case" across all methods.
+
+A more complete explanation of the algorithms available in FLANN can be found in the paper: 
+
+> Muja, M., & Lowe, D. G. (2009). Fast approximate nearest neighbors with automatic algorithm configuration. VISAPP (1), 2(331-340), 2.
+
+PDF versions can be found easily with your favorite search engine. Some working links at the time of writing are: [(link 1)](https://lear.inrialpes.fr/~douze/enseignement/2014-2015/presentation_papers/muja_flann.pdf), [(link 2)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.1721&rep=rep1&type=pdf), [(link 3)]()
+
+
+
 
 
 
