@@ -50,14 +50,11 @@ Windows users can follow the instructions provided in documentation of the [orig
 
 ## Using FLANN in Fortran
 
-We recommend trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the appropriate sections of your TOML manifest file:
+We recommend trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the dependencies section of your TOML manifest file:
 
 ```toml
 [dependencies]
 fortran-flann = { git = "https://github.com/ivan-pi/fortran-flann" }
-
-[build]
-link = ["flann"]
 ```
 
 ## Learn more
@@ -76,11 +73,11 @@ PDF versions can be found easily with your favorite search engine. Some working 
 
 ## Contributing
 
-Feel welcome to submit bug reports or request changes to the Fortran bindings by opening a new [issue](https://github.com/ivan-pi/fortran-flann/issues).
+Feel welcome to submit bug reports or suggest changes to the Fortran bindings by opening a new [issue](https://github.com/ivan-pi/fortran-flann/issues).
 
-Since the Fortran bindings provided here are only a wrapper of the C interface exported in the original FLANN project, we are restricted to a subset of FLANN features. 
+Since the Fortran bindings provided here are only a wrapper of the C interface exported in the original FLANN project, we are restricted to a subset of FLANN features.
 
-If you think you are facing an issue with the underlying FLANN library, you might be able to find an answer in the [list of open/closed issues](https://github.com/mariusmuja/flann/issues). Unfortunately, the original project has gone stale and doesn't seem to be supported anymore.
+If you think you are facing an issue with the underlying FLANN library, you might be able to find an answer in the [list of open/closed issues](https://github.com/mariusmuja/flann/issues) of the original FLANN project. Unfortunately, the original project has gone stale and doesn't seem to be supported anymore.
 
 
 
