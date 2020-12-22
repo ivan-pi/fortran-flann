@@ -2,9 +2,6 @@ name: fpm test
 
 on: [push, pull_request]
 
-- name: Setup fpm
-  uses: fortran-lang/setup-fpm@v2
-
 jobs:
   Build:
     runs-on: ${{ matrix.os }}
