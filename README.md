@@ -5,6 +5,9 @@
 
 # Fortran FLANN binding
 
+[![GitHub license](https://img.shields.io/badge/License-BSD--3-blue)](https://github.com/ivan-pi/fortran-flann/blob/master/LICENSE)
+[![fpm test](https://github.com/ivan-pi/fortran-flann/workflows/fpm%20test/badge.svg?branch=github_actions&event=push)](https://github.com/ivan-pi/fortran-flann/actions)
+
 Fortran bindings to the [FLANN](https://github.com/mariusmuja/flann
 ) library for performing fast approximate nearest neighbor searches in high dimensional spaces. 
 
