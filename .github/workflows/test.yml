@@ -28,10 +28,14 @@ jobs:
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${GCC_V} 100 \
         --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${GCC_V} \
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
+
     - name: Install fpm
       uses: fortran-lang/setup-fpm@v3
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install FLANN
+      run: sudo apt install libflann-dev libflann1.9
 
     - name: Build library
       run: |
