@@ -64,7 +64,7 @@ Windows users can follow the instructions provided in documentation of the [orig
 To use FLANN in your project we recommed trying the new Fortran package manager - [`fpm`](https://github.com/fortran-lang/fpm). To integrate FLANN in your project add the following lines to the `[dependencies]` section of your TOML manifest file:
 
 ```toml
-fortran-flann = { git = "https://github.com/ivan-pi/fortran-flann" }
+fortran-flann = { git = "https://github.com/ivan-pi/fortran-flann.git" }
 ```
 
 ## Learn more
